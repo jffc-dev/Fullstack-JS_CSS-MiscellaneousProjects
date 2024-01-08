@@ -196,6 +196,16 @@ $section.addEventListener('click', ()=>{
   audio.play()
 })
 
+$button.addEventListener('click', () => {
+  stop = !stop
+
+  if(!stop){
+    audio.play()
+    update()
+    $icon.classList.remove('fa-play')
+    $icon.classList.add('fa-pause')
+  }
+}, false);
 
 audio.addEventListener('ended', function() {
   this.currentTime = 0;
