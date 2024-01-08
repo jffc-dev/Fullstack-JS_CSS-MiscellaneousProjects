@@ -55,6 +55,22 @@ const PIECES = [
 
 const COLORS = ['yellow','red','deeppink','green','blue','orange','white','greenyellow','cyan','salmon','teal','gray','magenta','blueviolet','brown','khaki','chocolate','burlywood']
 
+const turnPiece = (shape) => {
+  const rotated = []
+
+  for(let i = 0; i < shape[0].length; i++){
+    const row = []
+
+    for(let j = shape.length - 1; j >= 0; j--){
+      row.push(shape[j][i])
+    }
+
+    rotated.push(row)
+  }
+
+  return rotated
+}
+
 let piece = generatePiece()
 
 let dropCounter = 0
