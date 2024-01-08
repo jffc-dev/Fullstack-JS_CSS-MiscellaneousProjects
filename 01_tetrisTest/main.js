@@ -9,6 +9,9 @@ const BLOCK_SIZE = 20
 const BOARD_WIDTH = 14
 const BOARD_HEIGT = 30
 
+let score = 0
+let $score = document.querySelector('span')
+
 canvas.width = BOARD_WIDTH * BLOCK_SIZE
 canvas.height = BOARD_HEIGT * BLOCK_SIZE
 
@@ -133,6 +136,8 @@ const draw = () => {
       }
     })
   })
+
+  $score.innerText = score.toString()
 }
 
 document.addEventListener('keydown', event => {
@@ -217,6 +222,7 @@ const removeRows = () => {
     board.splice(y,1)
     const newRow = Array(BOARD_WIDTH).fill(0)
     board.unshift(newRow)
+    score += 10
   })
 }
 
