@@ -71,6 +71,16 @@ const turnPiece = (shape) => {
   return rotated
 }
 
+const invertPiece = (shape) => {
+  const inverted = []
+
+  shape.forEach((row, y) => {
+    inverted.push(row.reverse())
+  })
+
+  return inverted
+}
+
 let piece = generatePiece()
 
 let dropCounter = 0
