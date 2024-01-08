@@ -81,6 +81,26 @@ const invertPiece = (shape) => {
   return inverted
 }
 
+const generatePiece = () => {
+  let newShape = PIECES[Math.floor(Math.random() * PIECES.length)]
+  const color = COLORS[Math.floor(Math.random() * COLORS.length)]
+  const rotationTimes = Math.floor(Math.random() * 3)
+  const invertTimes = Math.floor(Math.random() * 2)
+  for(let i = 0; i <= rotationTimes; i++){
+    newShape = turnPiece(newShape)
+  }
+  for(let i = 0; i <= invertTimes; i++){
+    newShape = invertPiece(newShape)
+  }
+
+  //reset position
+  let position = {}
+  position.y = 0
+  position.x = Math.floor(Math.random() * (BOARD_WIDTH-newShape[0].length+1))
+
+  return {shape: newShape, position, color}
+}
+
 let piece = generatePiece()
 
 let dropCounter = 0
