@@ -1,3 +1,4 @@
+import { COLORS, PIECES } from './constants'
 import './style.css'
 
 // initialize canvas
